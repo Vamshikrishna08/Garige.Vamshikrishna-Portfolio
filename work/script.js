@@ -1,27 +1,24 @@
 function toggleNav() {
-    var x = document.getElementById("nav-links");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-// Function to toggle the navigation menu
-function toggleNav() {
     var navbar = document.getElementById('navbar');
     navbar.classList.toggle('active');
 }
 
-// Close the navigation menu when clicking outside of it
+// Close the navigation menu when clicking outside of it on mobile screens
 document.addEventListener('click', function(event) {
     var navbar = document.getElementById('navbar');
     var hamburger = document.getElementById('hamburger-icon');
-    if (!navbar.contains(event.target) && event.target !== hamburger) {
+    if (!navbar.contains(event.target) && event.target !== hamburger && window.innerWidth <= 580) {
         navbar.classList.remove('active');
     }
 });
 
-
+// Close the navigation menu when the window is resized to a larger screen
+window.addEventListener('resize', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.innerWidth > 580) {
+        navbar.classList.remove('active');
+    }
+});
 document.addEventListener('DOMContentLoaded', function () {
     var navbarHeight = document.getElementById('navbar').offsetHeight - 20; // Decrease by 10 pixels
     var sections = document.querySelectorAll('section');
