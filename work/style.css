@@ -160,7 +160,7 @@ body {
 
 /* Media query for larger screens (e.g., desktops) */
 @media screen and (min-width: 769px) {
-    p {
+    p,li {
         font-size: 14px; /* Font size for larger screens */
     }
 }
