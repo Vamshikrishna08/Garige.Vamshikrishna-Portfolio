@@ -1,22 +1,16 @@
 function toggleNav() {
-    var navbar = document.getElementById('navbar');
-    navbar.classList.toggle('active');
+    var x = document.getElementById("nav-links");
+    x.style.display = (x.style.display === "block") ? "none" : "block";
 }
 
 // Close the navigation menu when clicking outside of it on mobile screens
 document.addEventListener('click', function(event) {
     var navbar = document.getElementById('navbar');
     var hamburger = document.getElementById('hamburger-icon');
-    if (!navbar.contains(event.target) && event.target !== hamburger && window.innerWidth <= 580) {
-        navbar.classList.remove('active');
-    }
-});
+    var navLinks = document.getElementById('nav-links');
 
-// Close the navigation menu when the window is resized to a larger screen
-window.addEventListener('resize', function() {
-    var navbar = document.getElementById('navbar');
-    if (window.innerWidth > 580) {
-        navbar.classList.remove('active');
+    if (window.innerWidth <= 580 && !navbar.contains(event.target) && event.target !== hamburger && !navLinks.contains(event.target)) {
+        navLinks.style.display = "none";
     }
 });
 document.addEventListener('DOMContentLoaded', function () {
