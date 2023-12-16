@@ -7,6 +7,28 @@ function toggleNav() {
     }
 }
 
+  // Function to toggle the navigation menu
+  function toggleNav() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active");
+    var navLinks = document.getElementById("nav-links");
+    if (navbar.classList.contains("active")) {
+      navLinks.style.display = "block";
+    } else {
+      navLinks.style.display = "none";
+    }
+  }
+
+  // Function to close the menu if clicked outside of it
+  window.onclick = function(event) {
+    var navbar = document.getElementById("navbar");
+    if (!event.target.matches('.icon') && navbar.classList.contains("active")) {
+      navbar.classList.remove('active');
+      var navLinks = document.getElementById("nav-links");
+      navLinks.style.display = "none";
+    }
+  }
+
 document.addEventListener('DOMContentLoaded', function () {
     var navbarHeight = document.getElementById('navbar').offsetHeight - 20; // Decrease by 10 pixels
     var sections = document.querySelectorAll('section');
