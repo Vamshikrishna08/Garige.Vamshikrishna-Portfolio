@@ -1,0 +1,409 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    background-image: url('wall5.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* This makes the background image fixed */
+    overscroll-behavior: none;
+}
+
+
+.profile-info {
+    background-color:  rgba(84, 224, 189, 0.9);/*rgba(139, 54, 165, 0.8); /* Adjust the alpha value (0.7 in this example) for the desired level of transparency */
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 225px;
+    margin-right: 20px;
+    border-radius: 7px;
+}
+
+.profile-details {
+    max-width: 60%;
+}
+
+
+#navbar {
+    overflow: hidden;
+    background-color: black;
+    padding: 10px 10px;
+    transition: 0.4s;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    position: fixed;
+}
+
+#navbar a {
+    float: left;
+    color: rgb(248, 245, 245);
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+#navbar #logo {
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+#navbar a:hover {
+    background-color:  dodgerblue;
+    color: white;
+}
+
+#navbar a.active {
+    background-color:#ddd;
+    color: black;
+}
+#navbar a.active:hover{
+    background-color: dodgerblue;
+    color: black;
+}
+
+#navbar-right {
+    float: right;
+    padding-top: 10px;
+}
+
+#nav-links {
+    display: block;
+}
+
+@media screen and (max-width: 580px) {
+    #navbar {
+        padding: 20px 10px !important;
+    }
+    #navbar a {
+        display: block;
+        text-align: left;
+    }
+    header {
+        padding: 16px 0;
+    }
+    .container {
+        width: 90%;
+        margin-top: 80px;
+    }
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .profile-details {
+        max-width: 100%;
+    }
+
+
+    #navbar #nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    #navbar.active #nav-links {
+        display: block;
+    }
+    #nav-links a {
+        display: block;
+        padding: 10px;
+        color: rgb(248, 245, 245);
+        text-decoration: none;
+    }
+
+    /* Style for dropdown button */
+    .dropdown-btn {
+        display: block;
+        padding: 10px;
+        color: rgb(248, 245, 245);
+        text-decoration: none;
+        background-color: #333; /* Change as per your design */
+        cursor: pointer;
+    }
+
+    /* Hide dropdown items by default */
+    .dropdown-content {
+        display: none;
+    }
+
+    /* Show dropdown content when dropdown button is clicked */
+    .dropdown-btn.active + .dropdown-content {
+        display: block;
+    }
+}
+   
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    p,li {
+        font-size: 14px; /* Font size for mobile devices */
+    }
+}
+
+/* Media query for larger screens (e.g., desktops) */
+@media screen and (min-width: 769px) {
+    p {
+        font-size: 18px; /* Font size for larger screens */
+    }
+}
+
+
+header {
+    
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.container, .container2 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*#projects {
+
+}*/
+
+#projects h2 {
+    color: rgb(49, 70, 49);
+    font-size: 35px;
+    padding-bottom: 28px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.project {
+    position: relative;
+    margin-bottom: 20px;
+    /*border: 1px solid #34495e;*/
+    padding: 20px;
+    background-color: rgba(160, 171, 182, 0.8); /* Adjust the alpha value (0.5 in this example) for the desired level of transparency */
+    color: #0e0f10;
+    border-radius: 8px;
+    width: calc(30% - 20px);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: background-color 0.7s ease-in-out;
+    z-index: 1;
+}
+
+.project:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    background-color: rgb(243, 28, 124,0.7);
+    color: #fafafa;
+}
+
+.project:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -50%;
+    width: 100%;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.8s ease-in-out;
+}
+
+.project:hover:before {
+    transform: scaleX(1);
+}
+
+.fadeIn {
+    animation: fadeIn 1s;
+}
+
+
+.pro {
+    
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: rgb(189, 202, 74);
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: calc(50% - 20px);
+    }
+}
+
+h2 {
+    color: rgb(49, 70, 49);
+    text-align: center;
+    font-size: 35px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p {
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Contact Form Styling */
+#contact {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 70px, rgba(32, 29, 29, 0.8) 50px, rgba(32, 29, 29, 0.8) 100%);
+    min-height: 600px;
+}
+
+#contact h2 {
+    text-align: justify;
+    color: #f6ecec;
+}
+
+.container2 {
+    max-width: 100%;
+    border-radius: 8px;
+    min-height: 300px;
+    color: #fafafa;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.form-container {
+    flex: 1;   
+    padding: 10px;
+    border-radius: 30px;
+    min-width: 300px;
+}
+
+form {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background: linear-gradient(rgb(30, 95, 105), rgb(85, 116, 104));
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 20px;
+    width: max-content;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: linear-gradient(rgb(85, 116, 104), rgb(30, 95, 105));
+    color:khaki;
+}
+
+
+
+/*  links sidebar CSS  */
+._social-links {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translatey(-50%);
+    padding: 12px 6px 12px 12px;
+    background: #fafafa;
+    border-radius: 10px 0 0px 10px;
+    box-shadow: -4px 0px 0px rgb(105, 250, 255);
+    transition: all 300ms ease;
+    z-index: 2; /* Add this line to adjust the stacking order */
+}
+
+._social-link:hover svg {
+    color: rgb(105, 250, 255);
+    fill: rgb(105, 250, 255); /* Add this line for fill color */
+}
+._social-links:hover {
+    box-shadow: -8px 0px 20px violet;
+    padding: 16px;
+}
+
+._links-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+._social-link a {
+	color: #111;
+	font-size: 20px;
+	transition: all 200ms ease;
+}
+._social-link a:visited {
+	color: #111;
+}
+._social-link a:hover {
+	color: rgb(105, 250, 255);
+	font-size: 1.75rem;
+}
+
+footer {
+    text-align: center;
+    padding: 16px 0;
+    background-color: #0e0d0d;
+    color: #fff;
+}
