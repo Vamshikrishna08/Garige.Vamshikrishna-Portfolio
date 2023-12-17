@@ -9,13 +9,13 @@ body {
     background-color: antiquewhite;
     background-image: url('wall5.jpg');
     background-size: cover;
-    background-attachment: fixed; /* This makes the background image fixed */
+    background-attachment: fixed; 
     overscroll-behavior: none;
 }
 
 
 .profile-info {
-    background-color:  rgba(84, 224, 189, 0.9);/*rgba(139, 54, 165, 0.8); /* Adjust the alpha value (0.7 in this example) for the desired level of transparency */
+    background-color:  rgba(84, 224, 189, 0.9);/*rgba(139, 54, 165, 0.8);  
     display: flex;
     align-items: center;
     padding: 50px;
@@ -136,7 +136,7 @@ body {
         padding: 10px;
         color: rgb(248, 245, 245);
         text-decoration: none;
-        background-color: #333; /* Change as per your design */
+        background-color: #333; 
         cursor: pointer;
     }
 
@@ -213,7 +213,7 @@ header p {
     margin-bottom: 20px;
     /*border: 1px solid #34495e;*/
     padding: 20px;
-    background-color: rgba(160, 171, 182, 0.8); /* Adjust the alpha value (0.5 in this example) for the desired level of transparency */
+    background-color: rgba(160, 171, 182, 0.8); 
     color: #0e0f10;
     border-radius: 8px;
     width: calc(30% - 20px);
