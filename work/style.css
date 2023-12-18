@@ -43,6 +43,7 @@ body {
     top: 0;
     z-index: 99;
     position: fixed;
+    height: auto;
 }
 
 #navbar a {
@@ -87,7 +88,8 @@ body {
 
 @media screen and (max-width: 580px) {
     #navbar {
-        padding: 20px 10px !important;
+	padding: 10px; 
+        height: auto; 
     }
     #navbar a {
         display: block;
